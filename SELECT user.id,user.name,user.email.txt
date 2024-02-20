@@ -1,0 +1,18 @@
+SELECT user.id,user.name,user.email,user.password,quali.key_id,quali.qualification
+FROM user
+INNER JOIN quali ON user.id=quali.id;
+
+
+
+INSERT INTO quali (187,'MS') 
+SELECT quali.id, quali.qualification FROM User LEFT JOIN quali ON  quali.id = User.id
+
+
+
+CREATE TABLE quali (
+    key_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT, 
+    qualification VARCHAR (100),
+    
+    FOREIGN KEY (id) REFERENCES crud.user(id)
+);
